@@ -1,0 +1,266 @@
+Last login: Tue Nov  8 10:38:13 on ttys000
+
+The default interactive shell is now zsh.
+To update your account to use zsh, please run `chsh -s /bin/zsh`.
+For more details, please visit https://support.apple.com/kb/HT208050.
+Gyanaas-MacBook-Air:~ gyanaavaibhav$ chmod 600 ~/Downloads/qwiklabs-L34827716.pem
+Gyanaas-MacBook-Air:~ gyanaavaibhav$ ssh -i ~/Downloads/qwiklabs-L34827716.pem student-03-d771149075af@35.239.244.207
+The authenticity of host '35.239.244.207 (35.239.244.207)' can't be established.
+ED25519 key fingerprint is SHA256:BAjWEnJlM2nPr7wRp6eMe4SpVVZFu5xg3SZivadJAlw.
+This key is not known by any other names
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added '35.239.244.207' (ED25519) to the list of known hosts.
+Linux linux-instance 5.10.0-19-cloud-amd64 #1 SMP Debian 5.10.149-2 (2022-10-21) x86_64
+
+The programs included with the Debian GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+student-03-d771149075af@linux-instance:~$ Git clone https://github.com/Gyanaa-Vaibhav/Introduction-to-Git-and-Github.git Introduction-to-Git-and-Github
+-bash: Git: command not found
+student-03-d771149075af@linux-instance:~$ git clone https://github.com/Gyanaa-Vaibhav/Introduction-to-Git-and-Github.git Introduction-to-Git-and-Github
+Cloning into 'Introduction-to-Git-and-Github'...
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Receiving objects: 100% (3/3), done.
+student-03-d771149075af@linux-instance:~$ git config --global user.name "Gyanaa"student-03-d771149075af@linux-instance:~$ git config --global user.email "gynanrudr0@gmail.com"
+student-03-d771149075af@linux-instance:~$ nano README.md
+student-03-d771149075af@linux-instance:~$ git status
+fatal: not a git repository (or any of the parent directories): .git
+student-03-d771149075af@linux-instance:~$ git status
+fatal: not a git repository (or any of the parent directories): .git
+student-03-d771149075af@linux-instance:~$ git add README.md
+fatal: not a git repository (or any of the parent directories): .git
+student-03-d771149075af@linux-instance:~$ git clone https://github.com/Gyanaa-Vaibhav/Introduction-to-Git-and-Github.git
+fatal: destination path 'Introduction-to-Git-and-Github' already exists and is not an empty directory.
+student-03-d771149075af@linux-instance:~$ ls
+Introduction-to-Git-and-Github  README.md
+student-03-d771149075af@linux-instance:~$ cd Introduction-to-Git-and-Github
+student-03-d771149075af@linux-instance:~/Introduction-to-Git-and-Github$ nano README.md
+student-03-d771149075af@linux-instance:~/Introduction-to-Git-and-Github$ nano README.md
+student-03-d771149075af@linux-instance:~/Introduction-to-Git-and-Github$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   README.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+student-03-d771149075af@linux-instance:~/Introduction-to-Git-and-Github$ git add README.md
+student-03-d771149075af@linux-instance:~/Introduction-to-Git-and-Github$ git commit
+[main 3d90655] I am editing the README file.
+ 1 file changed, 2 insertions(+)
+student-03-d771149075af@linux-instance:~/Introduction-to-Git-and-Github$ git push origin main
+Username for 'https://github.com': gyanaa-vaibhav
+Password for 'https://gyanaa-vaibhav@github.com': 
+remote: Support for password authentication was removed on August 13, 2021.
+remote: Please see https://docs.github.com/en/get-started/getting-started-with-git/about-remote-repositories#cloning-with-https-urls for information on currently recommended modes of authentication.
+fatal: Authentication failed for 'https://github.com/Gyanaa-Vaibhav/Introduction-to-Git-and-Github.git/'
+student-03-d771149075af@linux-instance:~/Introduction-to-Git-and-Github$ git push origin main
+Username for 'https://github.com': Gyanaa-Vaibhav
+Password for 'https://Gyanaa-Vaibhav@github.com': 
+remote: Support for password authentication was removed on August 13, 2021.
+remote: Please see https://docs.github.com/en/get-started/getting-started-with-git/about-remote-repositories#cloning-with-https-urls for information on currently recommended modes of authentication.
+fatal: Authentication failed for 'https://github.com/Gyanaa-Vaibhav/Introduction-to-Git-and-Github.git/'
+student-03-d771149075af@linux-instance:~/Introduction-to-Git-and-Github$ git push origin main
+Username for 'https://github.com': Gyanaa-Vaibhav
+Password for 'https://Gyanaa-Vaibhav@github.com': 
+remote: Permission to Gyanaa-Vaibhav/Introduction-to-Git-and-Github.git denied to Gyanaa-Vaibhav.
+fatal: unable to access 'https://github.com/Gyanaa-Vaibhav/Introduction-to-Git-and-Github.git/': The requested URL returned error: 403
+student-03-d771149075af@linux-instance:~/Introduction-to-Git-and-Github$ .git/config
+-bash: .git/config: Permission denied
+student-03-d771149075af@linux-instance:~/Introduction-to-Git-and-Github$ git remote set-url origin git@github.com:Gyanaa-Vaibhav/Introduction-to-Git-and-Github.git
+student-03-d771149075af@linux-instance:~/Introduction-to-Git-and-Github$ ls
+README.md
+student-03-d771149075af@linux-instance:~/Introduction-to-Git-and-Github$ git push origin main
+The authenticity of host 'github.com (140.82.113.3)' can't be established.
+ECDSA key fingerprint is SHA256:p2QAMXNIC1TJYWeIOttrVc98/R1BUFWu3/LiyKgUfQM.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added 'github.com,140.82.113.3' (ECDSA) to the list of known hosts.
+git@github.com: Permission denied (publickey).
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+student-03-d771149075af@linux-instance:~/Introduction-to-Git-and-Github$ git clone https://github.com/Gyanaa-Vaibhav/Introduction-to-Git-and-Github.git Introduction-to-Git-and-Github
+Cloning into 'Introduction-to-Git-and-Github'...
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Receiving objects: 100% (3/3), done.
+student-03-d771149075af@linux-instance:~/Introduction-to-Git-and-Github$ ls
+Introduction-to-Git-and-Github  README.md
+student-03-d771149075af@linux-instance:~/Introduction-to-Git-and-Github$ cd Introduction-to-Git-and-Github
+student-03-d771149075af@linux-instance:~/Introduction-to-Git-and-Github/Introduction-to-Git-and-Github$ nano README.md
+student-03-d771149075af@linux-instance:~/Introduction-to-Git-and-Github/Introduction-to-Git-and-Github$ nano README.md
+student-03-d771149075af@linux-instance:~/Introduction-to-Git-and-Github/Introduction-to-Git-and-Github$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   README.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+student-03-d771149075af@linux-instance:~/Introduction-to-Git-and-Github/Introduction-to-Git-and-Github$ git add README.md
+student-03-d771149075af@linux-instance:~/Introduction-to-Git-and-Github/Introduction-to-Git-and-Github$ git commit
+Aborting commit due to empty commit message.
+student-03-d771149075af@linux-instance:~/Introduction-to-Git-and-Github/Introduction-to-Git-and-Github$ git push origin main
+Username for 'https://github.com': Gyanaa-Vaibhav
+Password for 'https://Gyanaa-Vaibhav@github.com': 
+Everything up-to-date
+student-03-d771149075af@linux-instance:~/Introduction-to-Git-and-Github/Introduction-to-Git-and-Github$ git commit
+[main a8d756b] This is a test
+ 1 file changed, 1 insertion(+)
+student-03-d771149075af@linux-instance:~/Introduction-to-Git-and-Github/Introduction-to-Git-and-Github$ git push origin main
+Username for 'https://github.com': Gyanaa-Vaibhav
+Password for 'https://Gyanaa-Vaibhav@github.com': 
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 285 bytes | 285.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/Gyanaa-Vaibhav/Introduction-to-Git-and-Github.git
+   85905fb..a8d756b  main -> main
+student-03-d771149075af@linux-instance:~/Introduction-to-Git-and-Github/Introduction-to-Git-and-Github$ nano example.py
+student-03-d771149075af@linux-instance:~/Introduction-to-Git-and-Github/Introduction-to-Git-and-Github$ git add example.py
+student-03-d771149075af@linux-instance:~/Introduction-to-Git-and-Github/Introduction-to-Git-and-Github$ git commit
+[main 05a966b] This is a Python Test File
+ 1 file changed, 4 insertions(+)
+ create mode 100644 example.py
+student-03-d771149075af@linux-instance:~/Introduction-to-Git-and-Github/Introduction-to-Git-and-Github$ git push origin main
+Username for 'https://github.com': Gyanaa-Vaibhav
+Password for 'https://Gyanaa-Vaibhav@github.com': 
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 371 bytes | 371.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/Gyanaa-Vaibhav/Introduction-to-Git-and-Github.git
+   a8d756b..05a966b  main -> main
+student-03-d771149075af@linux-instance:~/Introduction-to-Git-and-Github/Introduction-to-Git-and-Github$ git push origin main
+Username for 'https://github.com': Gyanaa-Vaibhav
+Password for 'https://Gyanaa-Vaibhav@github.com': 
+To https://github.com/Gyanaa-Vaibhav/Introduction-to-Git-and-Github.git
+ ! [rejected]        main -> main (fetch first)
+error: failed to push some refs to 'https://github.com/Gyanaa-Vaibhav/Introduction-to-Git-and-Github.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+student-03-d771149075af@linux-instance:~/Introduction-to-Git-and-Github/Introduction-to-Git-and-Github$ git pull origin main
+hint: Pulling without specifying how to reconcile divergent branches is
+hint: discouraged. You can squelch this message by running one of the following
+hint: commands sometime before your next pull:
+hint: 
+hint:   git config pull.rebase false  # merge (the default strategy)
+hint:   git config pull.rebase true   # rebase
+hint:   git config pull.ff only       # fast-forward only
+hint: 
+hint: You can replace "git config" with "git config --global" to set a default
+hint: preference for all repositories. You can also pass --rebase, --no-rebase,
+hint: or --ff-only on the command line to override the configured default per
+hint: invocation.
+remote: Enumerating objects: 4, done.
+remote: Counting objects: 100% (4/4), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), 691 bytes | 691.00 KiB/s, done.
+From https://github.com/Gyanaa-Vaibhav/Introduction-to-Git-and-Github
+ * branch            main       -> FETCH_HEAD
+   05a966b..2439c71  main       -> origin/main
+Updating 05a966b..2439c71
+Fast-forward
+ Test | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 Test
+student-03-d771149075af@linux-instance:~/Introduction-to-Git-and-Github/Introduction-to-Git-and-Github$ git push origin main
+Username for 'https://github.com': Gyanaa-Vaibhav
+Password for 'https://Gyanaa-Vaibhav@github.com': 
+Everything up-to-date
+student-03-d771149075af@linux-instance:~/Introduction-to-Git-and-Github/Introduction-to-Git-and-Github$ git pull origin main
+hint: Pulling without specifying how to reconcile divergent branches is
+hint: discouraged. You can squelch this message by running one of the following
+hint: commands sometime before your next pull:
+hint: 
+hint:   git config pull.rebase false  # merge (the default strategy)
+hint:   git config pull.rebase true   # rebase
+hint:   git config pull.ff only       # fast-forward only
+hint: 
+hint: You can replace "git config" with "git config --global" to set a default
+hint: preference for all repositories. You can also pass --rebase, --no-rebase,
+hint: or --ff-only on the command line to override the configured default per
+hint: invocation.
+From https://github.com/Gyanaa-Vaibhav/Introduction-to-Git-and-Github
+ * branch            main       -> FETCH_HEAD
+Already up to date.
+student-03-d771149075af@linux-instance:~/Introduction-to-Git-and-Github/Introduction-to-Git-and-Github$ nano test_1.txt
+student-03-d771149075af@linux-instance:~/Introduction-to-Git-and-Github/Introduction-to-Git-and-Github$ git add test_1.txt
+student-03-d771149075af@linux-instance:~/Introduction-to-Git-and-Github/Introduction-to-Git-and-Github$ git commit
+[main 7794a98] this is a test
+ 1 file changed, 1 insertion(+)
+ create mode 100644 test_1.txt
+student-03-d771149075af@linux-instance:~/Introduction-to-Git-and-Github/Introduction-to-Git-and-Github$ git push origin main
+Username for 'https://github.com': Gyanaa-Vaibhav
+Password for 'https://Gyanaa-Vaibhav@github.com': 
+To https://github.com/Gyanaa-Vaibhav/Introduction-to-Git-and-Github.git
+ ! [rejected]        main -> main (fetch first)
+error: failed to push some refs to 'https://github.com/Gyanaa-Vaibhav/Introduction-to-Git-and-Github.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+student-03-d771149075af@linux-instance:~/Introduction-to-Git-and-Github/Introduction-to-Git-and-Github$ git pull origin main
+hint: Pulling without specifying how to reconcile divergent branches is
+hint: discouraged. You can squelch this message by running one of the following
+hint: commands sometime before your next pull:
+hint: 
+hint:   git config pull.rebase false  # merge (the default strategy)
+hint:   git config pull.rebase true   # rebase
+hint:   git config pull.ff only       # fast-forward only
+hint: 
+hint: You can replace "git config" with "git config --global" to set a default
+hint: preference for all repositories. You can also pass --rebase, --no-rebase,
+hint: or --ff-only on the command line to override the configured default per
+hint: invocation.
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 2 (delta 1), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (2/2), 616 bytes | 616.00 KiB/s, done.
+From https://github.com/Gyanaa-Vaibhav/Introduction-to-Git-and-Github
+ * branch            main       -> FETCH_HEAD
+   2439c71..e1f1a88  main       -> origin/main
+Merge made by the 'recursive' strategy.
+ data.txt | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 data.txt
+student-03-d771149075af@linux-instance:~/Introduction-to-Git-and-Github/Introduction-to-Git-and-Github$ git push origin main
+Username for 'https://github.com': Gyanaa-Vaibhav
+Password for 'https://Gyanaa-Vaibhav@github.com': 
+remote: Support for password authentication was removed on August 13, 2021.
+remote: Please see https://docs.github.com/en/get-started/getting-started-with-git/about-remote-repositories#cloning-with-https-urls for information on currently recommended modes of authentication.
+fatal: Authentication failed for 'https://github.com/Gyanaa-Vaibhav/Introduction-to-Git-and-Github.git/'
+student-03-d771149075af@linux-instance:~/Introduction-to-Git-and-Github/Introduction-to-Git-and-Github$ git push origin main
+Username for 'https://github.com': Gyanaa-Vaibhav
+Password for 'https://Gyanaa-Vaibhav@github.com': 
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (5/5), 531 bytes | 531.00 KiB/s, done.
+Total 5 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 1 local object.
+To https://github.com/Gyanaa-Vaibhav/Introduction-to-Git-and-Github.git
+   e1f1a88..e4b6688  main -> main
+student-03-d771149075af@linux-instance:~/Introduction-to-Git-and-Github/Introduction-to-Git-and-Github$ 

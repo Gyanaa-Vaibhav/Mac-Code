@@ -1,0 +1,129 @@
+Last login: Tue Nov  8 10:58:52 on ttys000
+
+The default interactive shell is now zsh.
+To update your account to use zsh, please run `chsh -s /bin/zsh`.
+For more details, please visit https://support.apple.com/kb/HT208050.
+Gyanaas-MacBook-Air:~ gyanaavaibhav$ chmod 600 ~/Downloads/qwiklabs-L34830602.pem
+Gyanaas-MacBook-Air:~ gyanaavaibhav$ ssh -i ~/Downloads/qwiklabs-L34830602.pem student-03-d771149075af@34.171.236.138
+The authenticity of host '34.171.236.138 (34.171.236.138)' can't be established.
+ED25519 key fingerprint is SHA256:ecZQ3C1zDz480Nli0ZWVz61TWDuIWnut+ExGljmSKm0.
+This key is not known by any other names
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added '34.171.236.138' (ED25519) to the list of known hosts.
+Linux linux-instance 5.10.0-19-cloud-amd64 #1 SMP Debian 5.10.149-2 (2022-10-21) x86_64
+
+The programs included with the Debian GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+Creating directory '/home/student-03-d771149075af'.
+student-03-d771149075af@linux-instance:~$ git clone https://github.com/Gyanaa-Vaibhav/it-cert-automation-practice.git
+Cloning into 'it-cert-automation-practice'...
+remote: Enumerating objects: 55, done.
+remote: Total 55 (delta 0), reused 0 (delta 0), pack-reused 55
+Receiving objects: 100% (55/55), 15.11 KiB | 595.00 KiB/s, done.
+Resolving deltas: 100% (20/20), done.
+student-03-d771149075af@linux-instance:~$ cd ~/it-cert-automation-practice
+student-03-d771149075af@linux-instance:~/it-cert-automation-practice$ git remote -v
+origin	https://github.com/Gyanaa-Vaibhav/it-cert-automation-practice.git (fetch)
+origin	https://github.com/Gyanaa-Vaibhav/it-cert-automation-practice.git (push)
+student-03-d771149075af@linux-instance:~/it-cert-automation-practice$ git add and upstream https://github.com/Gyanaa-Vaibhav/it-cert-automation-practice.git
+fatal: pathspec 'and' did not match any files
+student-03-d771149075af@linux-instance:~/it-cert-automation-practice$ git add upstream https://github.com/Gyanaa-Vaibhav/it-cert-automation-practice.git
+fatal: pathspec 'upstream' did not match any files
+student-03-d771149075af@linux-instance:~/it-cert-automation-practice$ git remote add upstream https://github.com/Gyanaa-Vaibhav/it-cert-automation-practice.git
+student-03-d771149075af@linux-instance:~/it-cert-automation-practice$ git remote -v
+origin	https://github.com/Gyanaa-Vaibhav/it-cert-automation-practice.git (fetch)
+origin	https://github.com/Gyanaa-Vaibhav/it-cert-automation-practice.git (push)
+upstream	https://github.com/Gyanaa-Vaibhav/it-cert-automation-practice.git (fetch)
+upstream	https://github.com/Gyanaa-Vaibhav/it-cert-automation-practice.git (push)
+student-03-d771149075af@linux-instance:~/it-cert-automation-practice$ git config --global user.name "Gyanaa"
+student-03-d771149075af@linux-instance:~/it-cert-automation-practice$ git config --global user.email "gynanrudr0@gmail.com"
+student-03-d771149075af@linux-instance:~/it-cert-automation-practice$ git branch improve-username-behavior
+student-03-d771149075af@linux-instance:~/it-cert-automation-practice$ git checkout improve-username-behavior
+Switched to branch 'improve-username-behavior'
+student-03-d771149075af@linux-instance:~/it-cert-automation-practice$ cd ~/it-cert-automation-practice/Course3/Lab4
+student-03-d771149075af@linux-instance:~/it-cert-automation-practice/Course3/Lab4$ ls
+validations.py
+student-03-d771149075af@linux-instance:~/it-cert-automation-practice/Course3/Lab4$ cat validations.py
+#!/usr/bin/env python3
+
+import re
+
+def validate_user(username, minlen):
+    """Checks if the received username matches the required conditions."""
+    if type(username) != str:
+        raise TypeError("username must be a string")
+    if minlen < 1:
+        raise ValueError("minlen must be at least 1")
+    
+    # Usernames can't be shorter than minlen
+    if len(username) < minlen:
+        return False
+    # Usernames can only use letters, numbers, dots and underscores
+    if not re.match('^[a-z0-9._]*$', username):
+        return False
+    # Usernames can't begin with a number
+    if username[0].isnumeric():
+        return False
+    return True
+
+
+
+student-03-d771149075af@linux-instance:~/it-cert-automation-practice/Course3/Lab4$ nano validations.py
+student-03-d771149075af@linux-instance:~/it-cert-automation-practice/Course3/Lab4$ python3 validations.py
+True
+True
+True
+True
+student-03-d771149075af@linux-instance:~/it-cert-automation-practice/Course3/Lab4$ nano validations.py
+
+
+Use "fg" to return to nano.
+
+[1]+  Stopped                 nano validations.py
+student-03-d771149075af@linux-instance:~/it-cert-automation-practice/Course3/Lab4$ nano validations.py
+student-03-d771149075af@linux-instance:~/it-cert-automation-practice/Course3/Lab4$ python3 validations.py
+True
+False
+True
+False
+student-03-d771149075af@linux-instance:~/it-cert-automation-practice/Course3/Lab4$ git status
+On branch improve-username-behavior
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   validations.py
+
+no changes added to commit (use "git add" and/or "git commit -a")
+student-03-d771149075af@linux-instance:~/it-cert-automation-practice/Course3/Lab4$ git add validations.py
+student-03-d771149075af@linux-instance:~/it-cert-automation-practice/Course3/Lab4$ git status
+On branch improve-username-behavior
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	modified:   validations.py
+
+student-03-d771149075af@linux-instance:~/it-cert-automation-practice/Course3/Lab4$ git commit
+[improve-username-behavior 038ac79] Hope this works
+ 1 file changed, 5 insertions(+), 1 deletion(-)
+student-03-d771149075af@linux-instance:~/it-cert-automation-practice/Course3/Lab4$ git commit
+On branch improve-username-behavior
+nothing to commit, working tree clean
+student-03-d771149075af@linux-instance:~/it-cert-automation-practice/Course3/Lab4$ git push origin improve-username-behavior
+Username for 'https://github.com': Gyanaa-Vaibhav
+Password for 'https://Gyanaa-Vaibhav@github.com': 
+Enumerating objects: 9, done.
+Counting objects: 100% (9/9), done.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (5/5), 520 bytes | 520.00 KiB/s, done.
+Total 5 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+remote: 
+remote: Create a pull request for 'improve-username-behavior' on GitHub by visiting:
+remote:      https://github.com/Gyanaa-Vaibhav/it-cert-automation-practice/pull/new/improve-username-behavior
+remote: 
+To https://github.com/Gyanaa-Vaibhav/it-cert-automation-practice.git
+ * [new branch]      improve-username-behavior -> improve-username-behavior
+student-03-d771149075af@linux-instance:~/it-cert-automation-practice/Course3/Lab4$ 
